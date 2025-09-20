@@ -49,10 +49,21 @@ export default {
 
 <style scoped>
 .petfolio-form {
-  width: 900px;
-  margin: 0 auto;
+  max-width: 900px;       
+  width: 100%;               
+  margin: 40px auto;     
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 8px;
+  background: #fff;        
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1); 
+  box-sizing: border-box;
 }
+
+.petfolio-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+
 </style>

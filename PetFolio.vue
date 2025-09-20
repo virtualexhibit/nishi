@@ -35,12 +35,11 @@ export default {
   },
   methods: {
     handleClick(field) {
-      if (field.display.text === "Register a Pet") {
+      if (field.on?.action === "registerPet") {
         this.showRegistrationForm = true
       }
-      if (field.display.text === "Pet List") {
+      if (field.on?.action === "showPetList") {
         this.showRegistrationForm = false
-        // later you can load pet list instead
       }
     }
 }

@@ -4,7 +4,7 @@
     
     <form class="mt-8 grid grid-cols-2 gap-7">
       <component
-        v-for="(field, index) in PetFolioButtons"
+        v-for="(field, index) in PetFolioRecipe.buttons"
         :is="field.component"
         :key="index"
         :item="field"
@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import { PetFolio } from "../recipes/rPetFolio.js"
+import { PetFolioRecipe } from "../recipes/rPetFolio.js"
 import AddButton from "../common/AddButton.vue"
 import RegistrationForm from "./RegistrationForm.vue"
 
@@ -28,8 +28,8 @@ export default {
   components: { AddButton, RegistrationForm  },
   data() {
     return {
-      PetFolioButtons: PetFolio,
-            showRegistrationForm: false
+    PetFolioRecipe: PetFolioRecipe,
+    showRegistrationForm: false
 
     }
   },

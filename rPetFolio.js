@@ -1,4 +1,4 @@
- const PetFolio = {
+ const PetFolioRecipe = {
   buttons: [
     {
       component: "AddButton",
@@ -15,4 +15,4 @@
   ]
 }
 
-export { PetFolio }
+export { PetFolioRecipe }

@@ -1,7 +1,11 @@
 <template>
   <div class="mb-3">
     <label class="input-label">{{ item.display.text }}</label>
-    <select class="form-select" v-bind="item.directives">
+    <select
+      class="form-select"
+      v-bind="item.directives"
+      v-model="inputValue"
+    >
       <option
         v-for="(option, idx) in item.options"
         :key="idx"
@@ -17,10 +21,23 @@
 export default {
   name: "SelectInput",
   props: {
-    item: { type: Object, required: true }
+    item: { type: Object, required: true },
+    modelValue: { type: String, default: "" }
+  },
+  emits: ["update:modelValue"],
+  computed: {
+    inputValue: {
+      get() {
+        return this.modelValue
+      },
+      set(val) {
+        this.$emit("update:modelValue", val)
+      }
+    }
   }
 }
 </script>
+
 
 
 <!-- in the recipe -->

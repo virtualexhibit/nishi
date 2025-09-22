@@ -2,9 +2,8 @@
   <div class="mb-3">
     <label class="input-label">{{ item.display.text }}</label>
     <textarea
-      class="form-control"
-      :rows="item.directives.rows || 3"
       v-bind="item.directives"
+      v-model="inputValue"
     ></textarea>
   </div>
 </template>
@@ -14,9 +13,22 @@ export default {
   name: "TextAreaInput",
   props: {
     item: { type: Object, required: true },
+    modelValue: { type: String, default: "" }
   },
-};
+  emits: ["update:modelValue"],
+  computed: {
+    inputValue: {
+      get() {
+        return this.modelValue
+      },
+      set(val) {
+        this.$emit("update:modelValue", val)
+      }
+    }
+  }
+}
 </script>
+
 
 
 <!-- in recipe
